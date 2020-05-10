@@ -29,14 +29,9 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../dllPrj/release/ -ldllPrj
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../dllPrj/debug/ -ldllPrj
-else:unix: LIBS += -L$$OUT_PWD/../dllPrj/ -ldllPrj
 
-INCLUDEPATH += $$PWD/../dllPrj
-DEPENDPATH += $$PWD/../dllPrj
 
-macx: LIBS += -L$$PWD/../../dllPrj2/dylibs/ -ldllPrj2
+macx: LIBS += -L$$PWD/../../dllPrj2/dylibs/ -ldllPrj2.1.0.0
 
 INCLUDEPATH += $$PWD/../../dllPrj2
 DEPENDPATH += $$PWD/../../dllPrj2
